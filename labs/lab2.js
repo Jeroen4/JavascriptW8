@@ -1,6 +1,4 @@
-
-
-function bereken() {
+function calc() {
 	var num1, num2, result;
 
 	 function getNum1(){
@@ -60,6 +58,6 @@ function bereken() {
 	setResult();
 }
 
-bereken();
+calc();
 
 
