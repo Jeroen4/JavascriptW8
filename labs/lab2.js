@@ -23,23 +23,23 @@ function calc() {
 
 	var num1 = getNum1();
 	var num2 = getNum2();
-	var decrement = Number(num1) + Number(num2);
+	var decrement = Number(num1) + Number(num2)
 	var increment = Number(num1) + Number(num2);
 	var operator = getOperator();
 
-	if (operator == "+", "plus") {
+	if (operator == "+") {
 
 		result = Number(num1) + Number(num2);
 
-	}else if(operator == "*", "keer") {
+	}else if(operator == "*") {
 
 	    result = Number(num1) * Number(num2);
 
-	}else if(operator == "/", ":", "delen") {
+	}else if(operator == "/") {
 
 	    result = Number(num1) / Number(num2);
 
-	}else if (operator == "-", "min") {
+	}else if (operator == "-") {
 
 	    result = Number(num1) - Number(num2);
 
