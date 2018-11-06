@@ -1,39 +1,60 @@
-var aantalFris = 0;
-var aantalBier = 0;							
-var aantalWijn = 0;
-var invoer;
+/*Jeroen Faasse,
+  Applicatie Onwikkeling niv 4, Da Vinci college Gorinchem
+*/
+const PRICEFRIS = 2.00;	
+const PRICEBIER = 2.50;		//Prijsweergave van de soorten drankjes.
+const PRICEWIJN = 4.00;
+const PRICESNACK = 5.00;
 
-const FRISPRIJS =2.50;
-const BIERPRIJS =3.50;															
-const WIJNPRIJS =4.00;
+var fris = 0;	
+var bier = 0;				
+var wijn = 0;				//Alle soorten drankjes beginnen met een aantal van 0;
+var snack = 0;
+var snackschaal = 0;
 
+var input;
 
+while (input != ("stop")){
 
-while(invoer != "stop"){
-	invoer = prompt("wat wilt u bestellen");
-	if (invoer == "fris") {
-		aantalFris = aantalFris + prompt("hoeveel fris wilt u bestellen?")
-		console.log(aantalFris, FRISPRIJS)
+// hier worden de vragen gesteld en de antwoorden gelogd, de antwoorden worden opgeslagen in de VARIABELEN
+	input = prompt("wat wilt u bestellen?");
+	if (input == "fris") {
+		var newFris = parseInt(prompt("hoeveel fris wilt u bestellen?"));
+		fris = fris + newFris;
+		console.log(fris , "x" , PRICEFRIS);
 	}
-	else if(invoer == "bier"){
-		aantalBier = prompt("hoeveel bier wilt u bestellen?")
-		console.log(aantalBier, BIERPRIJS)
+	else if (input == "bier"){
+		var newBier = parseInt(prompt("hoeveel bier wilt u bestellen?"));
+        bier = bier + newBier;
+		console.log(bier , "x" , PRICEBIER);
 	}
-	else if (invoer == "wijn"){
-		aantalBier = prompt("hoeveel wijn wilt u bestellen?")
-		console.log(aantalWijn, WIJNPRIJS)
+	else if (input == "wijn"){
+		var newWijn = parseInt(prompt("hoeveel wijn wilt u bestellen?"));
+		wijn = wijn + newWijn;
+		console.log(wijn , "x" , PRICEWIJN);
+	}
+	if (input == "snack"){
+		var newSnack = parseInt(prompt("Hoeveel wilt u toevoegen?", "8 of 16"));
+		snack = snack + newSnack;
+		var newSnackschaal = parseInt(prompt("hoeveel bitterbal schalen van " + snack + " " + "wilt u bestellen?" ));
+		snackschaal = snackschaal + newSnackschaal;
+		console.log(snackschaal*snack, "x" , PRICESNACK);
 	}
 }
 
 
-var priceFris = aantalFris*FRISPRIJS;
-var priceBier = aantalBier*BIERPRIJS;											
-var priceWijn = aantalWijn*WIJNPRIJS;
-var totalPrice = priceFris+priceBier+priceWijn;
+var frisPrice = fris*PRICEFRIS;
+var bierPrice = bier*PRICEBIER; 
+var wijnPrice = wijn*PRICEWIJN;
+var snackPrice = snackschaal*PRICESNACK
+var totalPrice = frisPrice+bierPrice+wijnPrice+snackPrice;		//hier word het totaal bedrag uitgerekent.
 
-
-document.write( aantalFris ," ", "fris" ," ", "€" , aantalFris*FRISPRIJS); 
-document.write("<br>", aantalBier ," ",  "bier" ," ", "€" , aantalBier*BIERPRIJS);
-document.write("<br>", aantalWijn ," ",  "wijn" ," ", "€" , aantalWijn*WIJNPRIJS);
-
-document.write("<br><br>Het totaalbedrag is"," ","€",totalPrice, ",-");	
+/*Prijsweergave en berekening */
+document.write("U heeft"," ", fris," ", "fris.", " ","€", frisPrice);
+document.write("<br><br>");		
+document.write("U heeft"," ", bier," ", "bier.", " ","€", bierPrice);
+document.write("<br><br>");					//"<br><br>" staat voor een dubble ENTER.
+document.write("U heeft"," ", wijn," ", "wijn.", " ","€", wijnPrice);
+document.write("<br><br>");		
+document.write("U heeft"," ", snack," ", "snacks.", " ","€", snackPrice);
+document.write("<br><br>", "De totale prijs is €", totalPrice);
