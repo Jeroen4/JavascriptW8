@@ -55,7 +55,7 @@ var snackPrice8 = schaal8*PRICESNACK8;
 var snackPrice16 = schaal16*PRICESNACK16;
 var totalPrice = frisPrice+bierPrice+wijnPrice+snackPrice8+snackPrice16;		//hier word het totaal bedrag uitgerekent.
 
-/*Prijsweergave en berekening */
+/*Prijsweergave*/
 document.write("U heeft"," ", fris," ", "fris.", " ","€", frisPrice);
 document.write("<br><br>");		
 document.write("U heeft"," ", bier," ", "bier.", " ","€", bierPrice);
