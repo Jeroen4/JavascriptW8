@@ -4,13 +4,14 @@
 const PRICEFRIS = 2.00;	
 const PRICEBIER = 2.50;		//Prijsweergave van de soorten drankjes.
 const PRICEWIJN = 4.00;
-const PRICESNACK = 5.00;
+const PRICESNACK8 = 5.00;
+const PRICESNACK16 = 9.20;
 
 var fris = 0;	
 var bier = 0;				
 var wijn = 0;				//Alle soorten drankjes beginnen met een aantal van 0;
-var snack = 0;
-var snackschaal = 0;
+var schaal8 = 0;
+var schaal16 = 0;
 
 var input;
 
@@ -33,21 +34,26 @@ while (input != ("stop")){
 		wijn = wijn + newWijn;
 		console.log(wijn , "x" , PRICEWIJN);
 	}
-	if (input == "snack"){
-		var newSnack = parseInt(prompt("Hoeveel wilt u toevoegen?", "8 of 16"));
-		snack = snack + newSnack;
-		var newSnackschaal = parseInt(prompt("hoeveel bitterbal schalen van " + snack + " " + "wilt u bestellen?" ));
-		snackschaal = snackschaal + newSnackschaal;
-		console.log(snackschaal*snack, "x" , PRICESNACK);
-	}
+	else if (input == "snack"){
+                var newSchaal8 = parseInt(prompt("kies hoeveel schalen van 8 u wilt."));
+                schaal8 = schaal8 + newSchaal8;
+                var newSchaal16 = parseInt(prompt("kies hoeveel schalen van 16 u wilt."));
+                schaal16 = schaal16 + newSchaal16;
+                console.log(schaal8, "x" , PRICESNACK8); 
+                console.log(schaal16, "x" , PRICESNACK16);
+            }
+    
 }
+
+
 
 
 var frisPrice = fris*PRICEFRIS;
 var bierPrice = bier*PRICEBIER; 
 var wijnPrice = wijn*PRICEWIJN;
-var snackPrice = snackschaal*PRICESNACK
-var totalPrice = frisPrice+bierPrice+wijnPrice+snackPrice;		//hier word het totaal bedrag uitgerekent.
+var snackPrice8 = schaal8*PRICESNACK8;
+var snackPrice16 = schaal16*PRICESNACK16;
+var totalPrice = frisPrice+bierPrice+wijnPrice+snackPrice8+snackPrice16;		//hier word het totaal bedrag uitgerekent.
 
 /*Prijsweergave en berekening */
 document.write("U heeft"," ", fris," ", "fris.", " ","€", frisPrice);
@@ -56,5 +62,8 @@ document.write("U heeft"," ", bier," ", "bier.", " ","€", bierPrice);
 document.write("<br><br>");					//"<br><br>" staat voor een dubble ENTER.
 document.write("U heeft"," ", wijn," ", "wijn.", " ","€", wijnPrice);
 document.write("<br><br>");		
-document.write("U heeft"," ", snack," ", "snacks.", " ","€", snackPrice);
+document.write("U heeft"," ",schaal8," ", "schalen van 8 bitterballen.", " ", "€", snackPrice8);
+document.write("<br><br>");		
+document.write("U heeft"," ",schaal16," ", "schalen van 16 bitterballen."," ", "€", snackPrice16);
+document.write("<br><br>");	
 document.write("<br><br>", "De totale prijs is €", totalPrice);
