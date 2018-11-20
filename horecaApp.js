@@ -15,17 +15,19 @@ var schaal16 = 0;
 
 var input;
 
-addToOrder();
+addOrder();
 
-function addToOrder(){
+function addOrder(){
 	while (input != "stop"){
+
 	// hier worden de vragen gesteld en de antwoorden gelogd, de antwoorden worden opgeslagen in de VARIABELEN
+	
 	input = prompt("wat wilt u bestellen?");
 	if (input == "fris") {
 		var newFris = parseInt(prompt("hoeveel fris wilt u bestellen?"));
 		fris = fris + newFris;
 		console.log(fris , "x" , PRICEFRIS);
-	}
+	} 
 	else if (input == "bier"){
 		var newBier = parseInt(prompt("hoeveel bier wilt u bestellen?"));
         bier = bier + newBier;
