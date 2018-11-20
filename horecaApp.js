@@ -21,8 +21,8 @@ function addOrder(){
 	while (input != "stop"){
 
 	// hier worden de vragen gesteld en de antwoorden gelogd, de antwoorden worden opgeslagen in de VARIABELEN
-	
-	input = prompt("wat wilt u bestellen?");
+
+	input = prompt("wat wilt u bestellen? " + "We hebben bier, wijn, fris en snacks");
 	if (input == "fris") {
 		var newFris = parseInt(prompt("hoeveel fris wilt u bestellen?"));
 		fris = fris + newFris;
@@ -38,7 +38,7 @@ function addOrder(){
 		wijn = wijn + newWijn;
 		console.log(wijn , "x" , PRICEWIJN);
 	}
-	 else if (input == "snack"){
+	 else if (input == "snacks"){
 	 	inputSnack = prompt("Hoeveel wilt u?", "8 of 16")
 	 	if (inputSnack == "8") {
 	 		var newSchaal8 = parseInt(prompt("kies hoeveel schalen van 8 u wilt."));
