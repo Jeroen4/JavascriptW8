@@ -64,26 +64,26 @@ function calcPrice(){
 	var snackPrice16 = schaal16*PRICESNACK16;
 	var totalPrice = frisPrice+bierPrice+wijnPrice+snackPrice8+snackPrice16;		
 	if (fris > 0) {
-		document.write("U heeft"," ", fris," ", "fris.", " ","€", frisPrice);
+		document.write("U heeft"," ", fris," ", "fris.", " ","€", frisPrice.toFixed(2));
 		document.write("<br><br>");
 	}
 	if (bier > 0) {
-		document.write("U heeft"," ", bier," ", "bier.", " ","€", bierPrice);
+		document.write("U heeft"," ", bier," ", "bier.", " ","€", bierPrice.toFixed(2));
 		document.write("<br><br>");	
 	}
 	if (wijn > 0) {
-		document.write("U heeft"," ", wijn," ", "wijn.", " ","€", wijnPrice);
+		document.write("U heeft"," ", wijn," ", "wijn.", " ","€", wijnPrice.toFixed(2));
 		document.write("<br><br>");  		//"<br><br>" staat voor een dubbele ENTER.
 	}
 	if (schaal8 > 0) {
-		document.write("U heeft"," ",schaal8," ", "schalen van 8 bitterballen.", " ", "€", snackPrice8);
+		document.write("U heeft"," ",schaal8," ", "schalen van 8 bitterballen.", " ", "€", snackPrice8.toFixed(2));
 		document.write("<br><br>");
 	}
 	if (schaal16 > 0) {
-		document.write("U heeft"," ",schaal16," ", "schalen van 16 bitterballen."," ", "€", snackPrice16);
+		document.write("U heeft"," ",schaal16," ", "schalen van 16 bitterballen."," ", "€", snackPrice16.toFixed(2));
 		document.write("<br><br>");	
 	}
-	document.write("De totale prijs is €", totalPrice);
+	document.write("De totale prijs is €", totalPrice.toFixed(2));
 }
 
 
